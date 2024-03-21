@@ -1,6 +1,6 @@
 FROM node:21-alpine
 
-COPY * .
+COPY . ./
 
 RUN npm install && \
     chmod +x ./docker-start.sh
