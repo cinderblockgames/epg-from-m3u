@@ -8,7 +8,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' > $GUIDE_FILE
 echo '<channels>' >> $GUIDE_FILE
 
   # this can't be efficient
-for channel in $channels; do cat ./sites/*/*.channels.xml | grep $channel > $GUIDE_FILE; done
+for channel in $channels; do cat ./sites/*/*.channels.xml | grep $channel >> $GUIDE_FILE; done
 
 echo '</channels>' >> $GUIDE_FILE
 
