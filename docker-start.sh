@@ -8,7 +8,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' > ./channels.xml
 echo '<channels>' >> ./channels.xml
 
   # this can't be efficient
-cat ./sites/*/*.channels.xml | grep $channels > ./channels.xml
+for channel in $channels; do cat ./sites/*/*.channels.xml | grep $channel > ./channels.xml; done
 
 echo '</channels>' >> ./channels.xml
 
