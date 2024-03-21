@@ -13,7 +13,7 @@ cat ./sites/*/*.channels.xml | grep $channels > ./channels.xml
 echo '</channels>' >> ./channels.xml
 
 # deduplicate channels.xml
-
+awk '!a[$0]++' ./channels.xml > ./channels.xml
 
 # start epg
 npm run grab -- --channels=./channels.xml --cron="0 0 * * *" &
