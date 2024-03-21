@@ -17,4 +17,4 @@ echo '</channels>' >> $CHANNELS_FILE
 
 # start epg
 npm run grab -- --channels=$CHANNELS_FILE --output=$GUIDE_FILE --cron="0 0 * * *" &
-npm run serve
+npm run serve --host 0.0.0.0
