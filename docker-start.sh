@@ -13,7 +13,7 @@ for channel in $channels; do cat ./sites/*/*.channels.xml | grep $channel >> $GU
 echo '</channels>' >> $GUIDE_FILE
 
 # deduplicate channels.xml
-awk '!a[$0]++' $GUIDE_FILE > $GUIDE_FILE
+#awk '!a[$0]++' $GUIDE_FILE > $GUIDE_FILE
 
 # start epg
 npm run grab -- --channels=$GUIDE_FILE --cron="0 0 * * *" &
