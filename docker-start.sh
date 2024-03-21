@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # get channels from m3u
-
+channels=$(rep -Eo 'tvg-id="([^"]+)"' $M3U_FILE | grep -Eo '"([^"]+)"' | tr -d '"')
 
 # put together channels.xml
 
