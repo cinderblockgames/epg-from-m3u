@@ -6,6 +6,7 @@ RUN npm install && \
     chmod +x ./docker-start.sh
 
 ENV M3U_FILE=/host/ita.m3u
+ENV CHANNELS_FILE=/host/channels.xml
 ENV GUIDE_FILE=/host/guide.xml
 
 EXPOSE 3000
