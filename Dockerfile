@@ -7,4 +7,6 @@ RUN npm install && \
 
 ENV M3U_FILE=/host/m3u/playlist.m3u
 
+EXPOSE 3000
+
 CMD ./docker-start.sh
