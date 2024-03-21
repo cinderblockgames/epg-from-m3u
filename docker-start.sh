@@ -7,10 +7,13 @@ channels=$(rep -Eo 'tvg-id="([^"]+)"' $M3U_FILE | grep -Eo '"([^"]+)"' | tr -d '
 echo '<?xml version="1.0" encoding="UTF-8"?>' > ./channels.xml
 echo '<channels>' >> ./channels.xml
 
-# this can't be efficient
+  # this can't be efficient
 cat ./sites/*/*.channels.xml | grep $channels > ./channels.xml
 
 echo '</channels>' >> ./channels.xml
+
+# deduplicate channels.xml
+
 
 # start epg
 npm run grab -- --channels=./channels.xml --cron="0 0 * * *" &
